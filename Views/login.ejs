@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/4b41a2cb5c.js" crossorigin="anonymous"></script></head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card my-5 col-sm-5 ">
+            <div class="card-body shadow-lg">
+                <form action="/login" method="POST">
+                    <div class="mb-3">
+                        <h1 class="d-flex justify-content-center text-primary fw-bolder">Login</h1>
+                        <label class="form-label">
+                            <i class="fas fa-at"></i> Email address:
+                        </label>
+                        <input type="email" class="form-control shadow" name="email">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-lock"></i> Password:
+                        </label>
+                        <input type="password" class="form-control shadow" name="password">
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="forgot-password text-dark" style="text-decoration: none;">Forgot Password?</a>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-check-label" for="rememberMeCheckbox">
+                            <input type="checkbox" class="form-check-input" id="rememberMeCheckbox" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Remember me?
+                        </label>
+                        
+                        <!-- Modal, ie a pop up -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Remember Me?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            By checking the "Remember me" box, your login information will be stored
+                                            on this device, allowing you to stay logged in even after closing the browser.
+                                        </p>
+                                        <p>
+                                            Please note that selecting this option on a shared or public computer is not recommended
+                                            for security reasons.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="login.html" class="btn btn-primary" data-bs-dismiss="modal">I Understand</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+         
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">  
+                            <i class="fa-solid fa-right-to-bracket"></i> Login
+                        </button>
+                    </div>
+
+                    <hr class="my-3"> 
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success">  
+                            <i class="fa-brands fa-google"></i> Sign-in with Google
+                        </button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
