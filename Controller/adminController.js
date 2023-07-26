@@ -35,7 +35,7 @@ exports.loginAdmin = async (req, res) => {
       }
     });
   
-    if (registeredAdmin.length == 0) { //checking if email exists
+    if (registeredAdmin.length == 0) { 
       return res.redirect("/login");
     }
   
