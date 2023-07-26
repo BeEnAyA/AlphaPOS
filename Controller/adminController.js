@@ -39,9 +39,6 @@ exports.loginAdmin = async (req, res) => {
       return res.redirect("/login");
     }
   
-    console.log(registeredAdmin[0].password);
-    console.log(bcrypt.compareSync(password, registeredAdmin[0].password));
-  
     if (bcrypt.compareSync(password, registeredAdmin[0].password)) {
       res.redirect("/");
     } else {
