@@ -15,6 +15,7 @@ app.set("view engine","ejs");
 require("./config/db");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname,"public")));
 app.use(express.static(path.join(__dirname,"Uploads/Admin")));
 app.use(express.static(path.join(__dirname,"Uploads/Product")));
 
@@ -27,11 +28,13 @@ app.get("/login", adminController.renderLogin);
 app.post("/login", adminController.loginAdmin)
 
 app.get("/product/add", productController.renderAddProduct)
-app.post("/product/add",productUpload.single("file"),productController.addProduct)
+app.get("/product/delete/:productId", productController.deleteProduct)
+app.post("/product/add",productUpload.single("image"),productController.addProduct)
 
 
 app.get("/product",productController.renderAllProduct)
 
+app.get('/search',productController.searchProduct);
 
 app.listen(port, () => {
     console.log("Node server started at port 4000");
