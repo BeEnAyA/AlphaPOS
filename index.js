@@ -12,7 +12,7 @@ const productUpload = multer({storage:productStorage})
 const path = require("path")
 app.set("view engine","ejs");
 
-require("./config/db");
+require("./Config/db");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,"public")));
