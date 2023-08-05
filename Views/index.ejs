@@ -1,28 +1,126 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDENT</title>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/4b41a2cb5c.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    <h1>Register Admin</h1>
-    <form action="/register" method="POST" enctype="multipart/form-data">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card my-5 col-sm-5 ">
+            <div class="card-body shadow-lg">
+                <form action="/register" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <h1 class="d-flex justify-content-center text-primary fw-bolder">Register</h1>
+                        <label class="form-label">
+                            <i class="fa-regular fa-user"></i> Name:
+                        </label>
+                        <input type="text" class="form-control shadow" name="name" placeholder="Enter your full name">
+                    </div>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-at"></i> Email address:
+                        </label>
+                        <input type="email" class="form-control shadow" name="email" placeholder="Enter your email adress">
+                   </div>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" required>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-lock"></i> Password:
+                        </label>
+                        <input type="password" class="form-control shadow" name="password" placeholder="create a strong password">
+                    </div>
 
-        <label for="file">File</label>
-        <input type="file" name="file" required>
-        
-        <input type="submit">
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-image"></i> Image:
+                        </label>
+                        <input type="file" class="form-control shadow" name="file">
+                    </div>
+                   
+                
+                    <div class="mb-3">
+                        <label class="form-check-label" for="rememberMeCheckbox">
+                            <input type="checkbox" class="form-check-input" id="rememberMeCheckbox" data-bs-toggle="modal" data-bs-target="#exampleModal" required>
+                            I agree to terms of use
+                        </label>
+                        
+                        <!-- Modal, ie a pop up -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            By registering and using our app, you agree to the following terms and conditions:
+                                        </p>
+                                        <ol>
+                                            <li>Eligibility: You must be of legal age or have parental/guardian consent to register and use the app.</li>
+                                            <li>Account Creation: You are responsible for maintaining the confidentiality of your account credentials.</li>
+                                            <li>Appropriate Use: Use the app only for its intended purposes and in compliance with all applicable laws.</li>
+                                            <li>User Content: You retain ownership of your content but grant the app a license to use it for its purposes.</li>
+                                            <li>Privacy: Your data will be handled as described in the Privacy Policy.</li>
+                                            <li>Intellectual Property: The app's content is protected by intellectual property rights.</li>
+                                            <li>In-App Purchases: You agree to pay the applicable fees for in-app purchases.</li>
+                                            <li>Termination: Your account may be suspended or terminated for violating these terms.</li>
+                                            <li>Updates and Modifications: The app may undergo periodic updates and changes.</li>
+                                            <li>Disclaimer of Warranty: The app is provided on an "as-is" basis.</li>
+                                            <li>Limitation of Liability: The app owners shall not be liable for any damages arising from app use.</li>
+                                            <li>Governing Law: These terms and conditions are governed by [Your Country/State] laws.</li>
+                                        </ol>
+                                        <p>
+                                            By registering and using the app, you acknowledge that you have read, understood, and agreed to these terms and conditions.
+                                            If you do not agree with any part of these terms, please refrain from using the app.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="/register" class="btn btn-primary" data-bs-dismiss="modal">I Agree</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">  
+                            <i class="fa-solid fa-user-plus"></i> Register
+                        </button>
+                    </div>
+                    
+                    <hr class="my-3"> 
+
+                    <div class="d-flex justify-content-center">
+                        <p>Already have an account yet? 
+                            <a href="/login" style="text-decoration: none;">Login </a> 
+                        </p>
+                    </div>
     
-    </form>
-        
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
 </body>
+
 </html>
