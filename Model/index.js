@@ -27,7 +27,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
- db.admin = require("./admin.js")(sequelize, DataTypes);
-
+db.admin = require("./admin.js")(sequelize, DataTypes);
+db.product=require('./product.js')(sequelize,DataTypes);
 
 module.exports = db;

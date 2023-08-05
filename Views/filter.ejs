@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="searchbar float-right">
+            <input type="text" name="search" id="searchBox" class="form-control" placeholder="Search items here...">
+            <ul id="results" style="z-index: 9999;"></ul>
+    </div>
+    <table class="table table-striped border">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Quantity </th>
+            <th scope="col">Image </th>
+          </tr>
+        </thead>
+        <tbody>
+            <% product.forEach(prod =>{ %>
+          <tr>
+            <th scope="row"><%= prod.id %></th>
+            <td><%= prod.name %></td>
+            <td><%= prod.unitPrice %></td>
+            <td><%= prod.quantity %></td>
+            <td><img src="<%= prod.image%>" style="height:30px;"></td>
+          </tr>
+          <% }) %>
+        </tbody>
+</div>
+
+
+<script>
+    // Get references to the search box and results list
+    const searchBox = document.getElementById('searchBox');
+    const resultsList = document.getElementById('results');
+
+    // Add an event listener to the search box for the 'input' event
+    searchBox.addEventListener('input', () => {
+      // Get the search keyword entered by the user
+      const keyword = searchBox.value;
+
+      if(keyword){
+      
+      // Make an AJAX request to the server, passing the search keyword as a query parameter
+      fetch(`/search?keyword=${encodeURIComponent(keyword)}`)
+        .then((response) => response.json()) // Parse the response as JSON
+        .then((data) => {
+          // Clear the current content of the results list
+          resultsList.innerHTML = '';
+          
+          // Iterate over the retrieved data (search results)
+          data.forEach((item) => {
+            // Create a new list item element for each search result
+            const li = document.createElement('li');
+            
+            // Set the text content of the list item to be the item name
+            li.textContent = item.name;
+            
+            // Add the list item to the results list
+            resultsList.appendChild(li);
+          });
+        })
+        .catch((error) => {
+          // If there's an error during the AJAX request or processing, log it to the console
+          console.error('Error fetching search results:', error);
+        });
+      }
+      else{
+        resultsList.innerHTML='';
+      }
+    });
+  </script>
+
+
+</body>
+</html>
