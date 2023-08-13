@@ -30,6 +30,7 @@ app.post("/login", adminController.loginAdmin)
 app.get("/product/add", productController.renderAddProduct)
 app.get("/product/delete/:productId", productController.deleteProduct)
 app.post("/product/add",productUpload.single("image"),productController.addProduct)
+app.get('/sales', productController.renderSalesProduct);
 
 
 app.get("/product",productController.renderAllProduct)

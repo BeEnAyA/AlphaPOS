@@ -14,7 +14,7 @@ exports.registerAdmin = async(req, res) =>{
             name:name,
             email:email,
             password:bcrypt.hashSync(password, 10),
-            file:req.file.filename,
+            profilePic:req.file.filename,
         })
         console.log("Admin registered successfully"); 
         res.redirect("/login")   

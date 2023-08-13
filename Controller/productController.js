@@ -46,3 +46,16 @@ exports.searchProduct=async (req, res) => {
 
     res.redirect('/product')
   }
+
+
+  //sales Part trial only
+exports.renderSalesProduct = async (req, res) => {
+    try {
+      const products = await Product.findAll(); // Fetch all products
+      res.render('sales', { product: products }); // Render the sales page with product data
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      res.status(500).send("An error occurred while fetching products.");
+    }
+  };
+  
