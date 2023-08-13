@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
   <script src="https://kit.fontawesome.com/2d2642681e.js" crossorigin="anonymous"></script>
@@ -26,167 +28,202 @@
   <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
+
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="/docs/assets/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="/docs/assets/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Full screen code -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <!-- Dark mode  -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Full screen code -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <!-- Dark mode  -->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AlphaPOS</span>
-    </a>
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="index3.html" class="brand-link">
+        <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">AlphaPOS</span>
+      </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">Admin</a>
+          </div>
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Admin</a>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <!-- POS -->
+            <li class="nav-item">
+              <a href="pages/widgets.html" class="nav-link">
+                <i class="nav-icon fas fa-file-invoice"></i>
+                <p>
+                  POS
+                </p>
+              </a>
+            </li>
+            <!-- Product -->
+            <li class="nav-item">
+              <a href="/product" class="nav-link">
+                <i class="nav-icon fas fa-box"></i>
+                <p>
+                  Product
+                </p>
+              </a>
+            </li>
+            <!-- Sales -->
+            <li class="nav-item">
+              <a href="/sales" class="nav-link active">
+                <i class="nav-icon fas fa-money-bill"></i>
+                <p>
+                  Sales
+                </p>
+              </a>
+            </li>
+            <!-- Purchase -->
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-cart-shopping"></i>
+                <p>
+                  Purchase
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">SALES</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <% for (let i=0; i < product.length; i +=4) { %>
+            <div class="row">
+              <% for (let j=i; j < i + 4 && j < product.length; j++) { %>
+                <div class="col-md-3 mb-4" style="max-width: 250px;">
+                  <div class="card" style="height: 300px;">
+                    <img src="<%= product[j].image %>" class="card-img-top" alt="Product Image"
+                      style="max-height: 150px;">
+                    <div class="card-body" style="padding: 10px;">
+                      <h6 class="card-title" style="font-size: 1rem;">
+                        <%= product[j].name %>
+                      </h6>
+                      <p class="card-text" style="font-size: 0.8rem;">Unit Price: $<%= product[j].unitPrice %>
+                      </p>
+                      <p class="card-text" style="font-size: 0.8rem;">Available Quantity: <%= product[j].quantity %>
+                      </p>
+                      <div class="input-group mb-2">
+                        <input type="number" class="form-control" style="font-size: 0.8rem;" placeholder="Quantity"
+                          id="quantity_<%= product[j].id %>">
+                        <div class="input-group-append">
+                          <button class="btn btn-sm btn-primary" style="font-size: 0.8rem;"
+                            onclick="addToCart('<%= product[j].id %>', '<%= product[j].name %>', '<%= product[j].unitPrice %>')">Add
+                            to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div><!-- /.container-fluid -->
+      </section>
+
+
+
+      <div class="invoice-section">
+        <div class="card"
+          style="position: fixed; top: 30px; right: 0; width: 250px; height: 88.5vh; overflow-y: auto; background-color: #f8f9fa; border-left: 1px solid #ddd; padding: 20px; box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);">
+          <div class="card-header">
+            Invoice
+          </div>
+          <div class="card-body invoice-items">
+            <!-- display itenms in cart/invoice here -->
+          </div>
+          <hr style="border: 1px solid #ccc; margin-top: 10px; margin-bottom: 10px;">
+
+          <div class="total-display" style="font-weight: bold; margin-top: 10px;">Total: $0.00</div>
+          <div class="discount-display" style="font-weight: bold; margin-top: 5px;">Discount: 0%</div>
+          <div class="final-total-display" style="font-weight: bold; margin-top: 5px;">Final Total: $0.00</div>
+          <button class="btn btn-primary btn-block" style="margin-top: 10px;">Generate Invoice</button>
         </div>
       </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <!-- Dashboard -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <!-- POS -->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-file-invoice"></i>
-              <p>
-                POS
-              </p>
-            </a>
-          </li>
-          <!-- Product -->
-          <li class="nav-item">
-            <a href="/product" class="nav-link">
-              <i class="nav-icon fas fa-box"></i>
-              <p>
-                Product
-              </p>
-            </a>
-          </li>
-          <!-- Sales -->
-          <li class="nav-item">
-            <a href="/sales" class="nav-link active">
-              <i class="nav-icon fas fa-money-bill"></i>
-              <p>
-                Sales
-              </p>
-            </a>
-          </li>
-          <!-- Purchase -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cart-shopping"></i>
-              <p>
-                Purchase
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
-  </aside>
+  </div>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">SALES</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <% product.forEach(prod => { %>
-                    <div class="col-md-4 mb-4" style="max-width: 250px;">
-                        <div class="card" style="height: 300px;"> <!-- Adjust the height as needed -->
-                            <img src="<%= prod.image %>" class="card-img-top" alt="Product Image" style="max-height: 150px;"> <!-- Adjust the max-height of the image -->
-                            <div class="card-body" style="padding: 10px;">
-                                <h6 class="card-title" style="font-size: 1rem;"><%= prod.name %></h6>
-                                <p class="card-text" style="font-size: 0.8rem;">Unit Price: $<%= prod.unitPrice %></p>
-                                <p class="card-text" style="font-size: 0.8rem;">Available Quantity: <%= prod.quantity %></p>
-                                <div class="input-group mb-2">
-                                    <input type="number" class="form-control" style="font-size: 0.8rem;" placeholder="Quantity">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-sm btn-primary" style="font-size: 0.8rem;">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% }) %>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
-    
-
-    <!-- /.content -->
+  <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -199,38 +236,90 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
+  </div>
+  <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="/plugins/moment/moment.min.js"></script>
-<script src="/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/dist/js/adminlte.js"></script>
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="/plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="/plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="/plugins/moment/moment.min.js"></script>
+  <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="/plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.js"></script>
+
+
+  <script>
+    var totalInvoicePrice = 0; // initial total price
+    var discountPercent = 7; // initial discont price
+
+    function addToCart(productId, productName, productPrice) {
+      var quantityInput = document.getElementById('quantity_' + productId);
+      var quantity = parseInt(quantityInput.value);
+
+      if (isNaN(quantity) || quantity <= 0) {
+        alert('Please enter a valid quantity.');
+        return;
+      }
+
+      var totalPrice = productPrice * quantity;
+      totalInvoicePrice += totalPrice; // total invoice price before discount is deducted
+
+      var invoiceItem = `
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <span style="font-weight: bold; color: blue;">${productName}</span>
+      <span style="display: flex; align-items: center;">
+        $${totalPrice.toFixed(2)}
+        <i class="fas fa-tag" style="color: #999; margin-left: 5px;"></i>
+      </span>
+    </div>
+    `;
+
+      var invoiceItemContainer = document.querySelector('.invoice-items');
+      invoiceItemContainer.insertAdjacentHTML('beforeend', invoiceItem);
+
+      // Update and display total invoice price
+      var totalDisplay = document.querySelector('.total-display');
+      totalDisplay.textContent = `Total: ${totalInvoicePrice.toFixed(2)}`;
+
+      // for discount 
+      var discountAmount = (totalInvoicePrice * discountPercent) / 100;
+      var discountDisplay = document.querySelector('.discount-display');
+      discountDisplay.textContent = `Discount: ${discountPercent}%`;
+
+      // sum after discount is given
+      var finalTotal = totalInvoicePrice - discountAmount;
+      var finalTotalDisplay = document.querySelector('.final-total-display');
+      finalTotalDisplay.textContent = `Final Total: $${finalTotal.toFixed(2)}`;
+
+      // Clear quantity input after adding to the invoice
+      quantityInput.value = '';
+    }
+  </script>
+
+
 </body>
+
 </html>
