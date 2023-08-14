@@ -109,7 +109,7 @@
             </li>
             <!-- POS -->
             <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
+              <a href="/pos" class="nav-link">
                 <i class="nav-icon fas fa-file-invoice"></i>
                 <p>
                   POS
@@ -206,17 +206,13 @@
         <div class="card"
           style="position: fixed; top: 30px; right: 0; width: 250px; height: 88.5vh; overflow-y: auto; background-color: #f8f9fa; border-left: 1px solid #ddd; padding: 20px; box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);">
           <div class="card-header">
-            Invoice
+            Selected Items 
           </div>
           <div class="card-body invoice-items">
-            <!-- display itenms in cart/invoice here -->
+            <!-- display item here -->
           </div>
           <hr style="border: 1px solid #ccc; margin-top: 10px; margin-bottom: 10px;">
-
-          <div class="total-display" style="font-weight: bold; margin-top: 10px;">Total: $0.00</div>
-          <div class="discount-display" style="font-weight: bold; margin-top: 5px;">Discount: 0%</div>
-          <div class="final-total-display" style="font-weight: bold; margin-top: 5px;">Final Total: $0.00</div>
-          <button class="btn btn-primary btn-block" style="margin-top: 10px;">Generate Invoice</button>
+          <a href="/pos" class="btn btn-primary btn-block" style="margin-top: 10px;">Generate Invoice</a>
         </div>
       </div>
     </div>
@@ -272,9 +268,6 @@
 
 
   <script>
-    var totalInvoicePrice = 0; // initial total price
-    var discountPercent = 7; // initial discont price
-
     function addToCart(productId, productName, productPrice) {
       var quantityInput = document.getElementById('quantity_' + productId);
       var quantity = parseInt(quantityInput.value);
@@ -284,40 +277,21 @@
         return;
       }
 
-      var totalPrice = productPrice * quantity;
-      totalInvoicePrice += totalPrice; // total invoice price before discount is deducted
-
       var invoiceItem = `
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-      <span style="font-weight: bold; color: blue;">${productName}</span>
-      <span style="display: flex; align-items: center;">
-        $${totalPrice.toFixed(2)}
-        <i class="fas fa-tag" style="color: #999; margin-left: 5px;"></i>
-      </span>
-    </div>
-    `;
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span style="font-weight: bold; color: blue;">${productName}</span>
+          <span style="font-size: 0.8rem; color: green;">Qty: ${quantity}</span>
+        </div>
+      `;
 
       var invoiceItemContainer = document.querySelector('.invoice-items');
       invoiceItemContainer.insertAdjacentHTML('beforeend', invoiceItem);
 
-      // Update and display total invoice price
-      var totalDisplay = document.querySelector('.total-display');
-      totalDisplay.textContent = `Total: ${totalInvoicePrice.toFixed(2)}`;
-
-      // for discount 
-      var discountAmount = (totalInvoicePrice * discountPercent) / 100;
-      var discountDisplay = document.querySelector('.discount-display');
-      discountDisplay.textContent = `Discount: ${discountPercent}%`;
-
-      // sum after discount is given
-      var finalTotal = totalInvoicePrice - discountAmount;
-      var finalTotalDisplay = document.querySelector('.final-total-display');
-      finalTotalDisplay.textContent = `Final Total: $${finalTotal.toFixed(2)}`;
-
       // Clear quantity input after adding to the invoice
       quantityInput.value = '';
     }
-  </script>
+</script>
+
 
 
 </body>

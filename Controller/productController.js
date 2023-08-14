@@ -1,4 +1,4 @@
-const db=require("../model/index.js")
+const db=require("../Model/index.js")
 const Product=db.product
 const sequelize=require('sequelize')
 
@@ -58,4 +58,8 @@ exports.renderSalesProduct = async (req, res) => {
       res.status(500).send("An error occurred while fetching products.");
     }
   };
+
+exports.renderPOS = async (req, res) => {
+      res.render('pos',);  
+  };  
   

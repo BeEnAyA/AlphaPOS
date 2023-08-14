@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 4000;
-const db= require("./model/index");
-const adminController = require ("./controller/adminController");
-const productController=require("./controller/productController")
+const db= require("./Model/index");
+const adminController = require ("./Controller/adminController");
+const productController=require("./Controller/productController");
+
 const {storage, multer, productStorage} = require("./services/multerConfig");
 const adminUpload = multer({storage:storage})
 const productUpload = multer({storage:productStorage})
@@ -23,7 +24,7 @@ db.sequelize.sync({force:false});
 
 
 app.get("/", adminController.index);
-app.post("/register", adminUpload.single("file"),adminController.registerAdmin);
+app.post("/register", adminUpload.single("profilePic"),adminController.registerAdmin);
 app.get("/login", adminController.renderLogin);
 app.post("/login", adminController.loginAdmin)
 
@@ -31,6 +32,7 @@ app.get("/product/add", productController.renderAddProduct)
 app.get("/product/delete/:productId", productController.deleteProduct)
 app.post("/product/add",productUpload.single("image"),productController.addProduct)
 app.get('/sales', productController.renderSalesProduct);
+app.get('/pos', productController.renderPOS);
 
 
 app.get("/product",productController.renderAllProduct)

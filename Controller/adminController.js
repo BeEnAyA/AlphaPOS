@@ -1,4 +1,4 @@
-const db = require("../model/index");
+const db = require("../Model/index");
 const Admin = db.admin;
 const bcrypt = require("bcryptjs");
 
@@ -40,7 +40,7 @@ exports.loginAdmin = async (req, res) => {
     }
   
     if (bcrypt.compareSync(password, registeredAdmin[0].password)) {
-      res.redirect("/");
+      res.redirect("/product/add");
     } else {
       res.redirect("/login");
     }
