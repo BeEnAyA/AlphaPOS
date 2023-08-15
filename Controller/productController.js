@@ -59,6 +59,39 @@ exports.renderSalesProduct = async (req, res) => {
     }
   };
 
+  exports.createSale = async (req, res) => {
+    const { productId, quantity } = req.body;
+  
+    try {
+      const product = await Product.findByPk(productId);
+  
+      if (!product) {
+        return res.status(404).json({ error: 'Product not found' });
+      }
+  
+      if (product.quantity < quantity) {
+        return res.status(400).json({ error: 'Insufficient product quantity' });
+      }
+  
+      // Calculate total and create a new sale
+      const total = product.unitPrice * quantity;
+      const newSale = await Sale.create({ total });
+  
+      // Create an item for the sale
+      await Item.create({ saleId: newSale.id, productId, quantity });
+  
+      // Update the product quantity
+      product.quantity -= quantity;
+      await product.save();
+  
+      res.status(201).json({ message: 'Sale created successfully' });
+    } catch (error) {
+      console.error('Error creating sale:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  
+
 exports.renderPOS = async (req, res) => {
       res.render('pos',);  
   };  

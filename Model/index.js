@@ -34,12 +34,8 @@ db.customer=require('./customer.js')(sequelize,DataTypes);
 db.item=require('./item.js')(sequelize,DataTypes);
 
 //relation for sales
-db.customer.hasMany(db.sale, { onDelete: 'CASCADE' });
-db.sale.belongsTo(db.customer);
-
-db.product.hasMany(db.sale, { onDelete: 'CASCADE' });
-db.sale.belongsTo(db.product);
-
+db.sale.hasMany(db.customer, { onDelete: 'CASCADE' });
+db.customer.belongsTo(db.sale);
 
 
 //relation for items (sales and product)

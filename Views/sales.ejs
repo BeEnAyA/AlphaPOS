@@ -201,22 +201,25 @@
       </section>
 
 
-
       <div class="invoice-section">
         <div class="card"
           style="position: fixed; top: 30px; right: 0; width: 250px; height: 88.5vh; overflow-y: auto; background-color: #f8f9fa; border-left: 1px solid #ddd; padding: 20px; box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);">
           <div class="card-header">
-            Selected Items 
+            Selected Items
           </div>
           <div class="card-body invoice-items">
             <!-- display item here -->
           </div>
           <hr style="border: 1px solid #ccc; margin-top: 10px; margin-bottom: 10px;">
-          <a href="/pos" class="btn btn-primary btn-block" style="margin-top: 10px;">Generate Invoice</a>
+          <form id="generateInvoiceForm" action="/createSale" method="post">
+            <!-- Hidden input fields to store selected product IDs and quantities -->
+            <input type="hidden" name="productIds" id="productIds" value="">
+            <input type="hidden" name="quantities" id="quantities" value="">
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px;">Generate Invoice</button>
+          </form>
         </div>
       </div>
-    </div>
-  </div>
+      
 
 
   <!-- /.content -->
@@ -271,28 +274,36 @@
     function addToCart(productId, productName, productPrice) {
       var quantityInput = document.getElementById('quantity_' + productId);
       var quantity = parseInt(quantityInput.value);
-
+  
       if (isNaN(quantity) || quantity <= 0) {
         alert('Please enter a valid quantity.');
         return;
       }
-
+  
       var invoiceItem = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
           <span style="font-weight: bold; color: blue;">${productName}</span>
           <span style="font-size: 0.8rem; color: green;">Qty: ${quantity}</span>
         </div>
       `;
-
+  
       var invoiceItemContainer = document.querySelector('.invoice-items');
       invoiceItemContainer.insertAdjacentHTML('beforeend', invoiceItem);
-
+  
+      // Extract the productId from the element's id attribute
+      var extractedProductId = productId.replace("quantity_", "");
+  
+      // Store selected product IDs and quantities in hidden inputs
+      var productIdsInput = document.getElementById('productIds');
+      var quantitiesInput = document.getElementById('quantities');
+      productIdsInput.value += extractedProductId + ",";
+      quantitiesInput.value += quantity + ",";
+      
       // Clear quantity input after adding to the invoice
       quantityInput.value = '';
     }
-</script>
-
-
+  </script>
+  
 
 </body>
 
