@@ -163,6 +163,63 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-6">
+          <p class="lead">Payment Methods:</p>
+          <img src="../public/dist/img/credit/visa.png" alt="Visa">
+          <img src="../public/dist/img/credit/mastercard.png" alt="Mastercard">
+          <img src="../public/dist/img/credit/american-express.png" alt="American Express">
+          <img src="../public/dist/img/credit/paypal2.png" alt="Paypal">
+
+          <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+            Pay by the method that suits you. 
+          </p>
+        </div>
+        <!-- /.col -->
+        
+        <div class="col-6">
+          <p class="lead">Amount Due: <%= currentSale.createdAt.toISOString().slice(0, 10) %></p>
+
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th style="width:50%">Subtotal:</th>
+                <td>$<%= subtotal.toFixed(2) %></td>
+              </tr>
+              <tr>
+                <th>Tax (9.3%)</th>
+                <td>$<%= tax.toFixed(2) %></td>
+              </tr>
+              <tr>
+                <th>Discount (5%)</th>
+                <td>$<%= discount.toFixed(2) %></td>
+              </tr>
+              <tr>
+                <th>Total:</th>
+                <td>$<%= total.toFixed(2) %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      <!-- /.row -->
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-12">
+          <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+          <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+            Payment
+          </button>
+          <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+            <i class="fas fa-download"></i> Generate PDF
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /.invoice -->
+
     </section>
   </div>
   <footer class="main-footer">
@@ -187,5 +244,27 @@
 <script src="/plugins/summernote/summernote-bs4.min.js"></script>
 <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="/dist/js/adminlte.js"></script>
+<script>
+  function calculateSubtotal(items) {
+  let subtotal = 0;
+  items.forEach(item => {
+    subtotal += item.subtotal;
+  });
+  return subtotal;
+}
+
+function calculateDiscount(subtotal) {
+  return subtotal * 0.05; // 5% discount
+}
+
+function calculateTax(amount) {
+  return amount * 0.093; // 9.3% tax
+}
+
+function calculateTotal(amount) {
+  return amount + calculateTax(amount);
+}
+
+</script>
 </body>
 </html>
