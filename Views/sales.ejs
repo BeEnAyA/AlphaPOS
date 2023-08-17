@@ -200,7 +200,6 @@
         </div><!-- /.container-fluid -->
       </section>
 
-
       <div class="invoice-section">
         <div class="card"
           style="position: fixed; top: 30px; right: 0; width: 250px; height: 88.5vh; overflow-y: auto; background-color: #f8f9fa; border-left: 1px solid #ddd; padding: 20px; box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);">
@@ -215,10 +214,23 @@
             <!-- Hidden input fields to store selected product IDs and quantities -->
             <input type="hidden" name="productIds" id="productIds" value="">
             <input type="hidden" name="quantities" id="quantities" value="">
+            
+            <!-- Input field for the user's phone number -->
+            <label for="phoneNumber">Phone Number:</label>
+            <div class="input-group">
+              <input type="tel" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Enter your phone number" required>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="fas fa-user"></i> <!-- Font Awesome user icon -->
+                </button>
+              </div>
+            </div>
+            
             <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px;">Generate Invoice</button>
           </form>
         </div>
       </div>
+      
       
 
 
