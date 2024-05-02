@@ -5,6 +5,7 @@ const db= require("./Model/index");
 const adminController = require ("./Controller/adminController");
 const productController=require("./Controller/productController");
 const salesController=require("./Controller/salesController");
+const customerController = require("./Controller/customerController");
 
 const {storage, multer, productStorage} = require("./services/multerConfig");
 const adminUpload = multer({storage:storage})
@@ -40,6 +41,10 @@ app.post('/createSale', salesController.createSale);
 app.get("/product",productController.renderAllProduct)
 
 app.get('/search',productController.searchProduct);
+
+app.get("/addCustomers",customerController.renderAddCustomers)
+app.post("/customer/add",customerController.addCustomer);
+app.get('/customersList', customerController.renderCoustomers);
 
 app.listen(port, () => {
     console.log("Node server started at port 4000");
