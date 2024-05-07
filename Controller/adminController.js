@@ -20,7 +20,6 @@ exports.registerAdmin = async(req, res) =>{
         res.redirect("/login")   
 }; 
 
-
 exports.renderLogin = async (req, res) => {
     res.render("login");
   };
@@ -46,3 +45,29 @@ exports.loginAdmin = async (req, res) => {
     }
   
   };  
+
+  exports.updateProfile = async (req, res) => {
+    const { name, email, password } = req.body;
+    const adminId = req.params.id; // Assuming you pass admin ID in the URL
+    
+    try {
+        const admin = await Admin.findByPk(adminId);
+
+        if (!admin) {
+            return res.status(404).send("Admin not found");
+        }
+
+        admin.name = name;
+        admin.email = email;
+        admin.password = bcrypt.hashSync(password, 10); // Update password if provided
+
+        await admin.save();
+
+        res.redirect("/profile"); // Redirect to profile page after update
+    } catch (error) {
+        console.error("Error updating admin profile:", error);
+        res.status(500).send("Internal Server Error");
+    }
+};
+
+
